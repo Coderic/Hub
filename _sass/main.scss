@@ -1,0 +1,324 @@
+$backgroundColor: #ffffff;
+$bodyColor: #000000;
+$bodyFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+
+body {
+  background: $backgroundColor;
+  color: $bodyColor;
+  font-family: $bodyFont;
+}
+@theme {
+    --font-sans: 'Red Hat Display', ui-sans, system-ui, sans, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+}
+
+[x-cloak] {
+    display: none;
+}
+
+body {
+  font-family: 'Red Hat Display', sans;
+}
+.coderic {
+  vertical-align: middle;
+  height: 50px;
+  vertical-align: text-top;
+  background: linear-gradient(180deg,
+    hsl(0, 0%, 58%) 0%,
+    hsl(0, 0%, 80%) 47%,
+    hsl(0, 0%, 38%) 53%,
+    hsl(0, 0%, 58%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-size: 35px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-family: 'Red Hat Display';
+  letter-spacing:-2px;
+}
+.bg-pattern {
+    background-image: url(../../images/pattern.png);
+}
+
+.cards-animate .card {
+    position: relative;
+    border-radius: 15px;
+    background: url(../../images/feature6.png) #e5e7eb;
+    z-index: 1;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.cards-animate .card::before {  
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    left: -17%;
+    top: -3%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.jumbotron {
+    background-image: url(../../images/breadcumb-bg.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.cards-animate .card::after {  
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+    z-index: -1;
+    background: url(../../images/feature7.png);
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    right: 0;
+    bottom: 0;
+    transform: perspective(500px) rotateX(-90deg);
+    opacity: 0;
+}
+
+.cards-animate .card:hover::after {
+    transform: perspective(500px) rotateX(0deg);
+    opacity: 1;
+  }
+
+.cards-animate .card:hover::before {
+    clip-path: polygon(
+        25% -70%,
+        75% -70%,
+        120% 50%,
+        75% 170%,
+        25% 170%,
+        -20% 50%
+    );
+}
+.cards-animate .card:hover {
+    border: 1px solid #ff4208;
+  }
+
+  
+  .cards-animate .card .icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 38px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid #ffffff;
+    line-height: 70px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .cards-animate .card .icon svg {
+    transition: 0.5s;
+    filter: brightness(1) invert(0);
+  }
+  
+  .cards-animate .card .icon::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: #171a2b;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.5s;
+  }
+  
+  .cards-animate .card h3 {
+    font-size: 18px;
+    color: #050a1e;
+    font-weight: 600;
+    font-family: "Poppins";
+    margin: 0;
+    padding: 6px 0 0px;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  
+  .cards-animate .card p {
+    font-size: 16px;
+    line-height: 26px;
+    color: #525252;
+    font-weight: 400;
+    font-family: "Fira Sans";
+    margin: 0;
+    transition: 0.5s;
+  }
+    
+  .cards-animate .card:hover .icon::before {
+    transform: scale(1);
+  }
+  
+  .cards-animate .card:hover .icon svg {
+    filter: brightness(0) invert(1);
+  }
+  
+  .cards-animate .card:hover h3 {
+    color: #fff;
+  }
+  
+  .cards-animate .card:hover p {
+    color: #fff;
+  }
+
+
+.lang-grid {
+    list-style: none;
+    margin-bottom: 3em;
+    padding-left: 0
+}
+
+.lang-grid li {
+    display: inline-block;
+    width: 80px;
+    height: 130px;
+    margin-left: 20px;
+    margin-right: 20px
+}
+
+.lang-grid li .lang-logo {
+    display: block;
+    position: relative;
+    font-weight: 700
+}
+
+.lang-grid li .lang-logo span {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #c0c0c0;
+}
+
+.lang-grid li .lang-logo:hover span {
+    color: #000;
+}
+
+.lang-grid {
+    padding-top: 2em;
+}
+.lang-grid li .lang-logo {
+    display: block;
+    position: relative;
+    font-weight: 700;
+}
+
+.lang-logo {
+  display: inline-block;
+  position: relative;
+  height: 80px;
+  width: 80px;
+  background-repeat: no-repeat;
+  background-image: url(../../images/lang-logo.png)
+}
+
+.lang-logo.nodejs {
+  background-position: 0 -80px;
+}
+
+.lang-logo.nodejs:hover {
+  background-position: 0 0;
+}
+
+.lang-logo.ruby {
+  background-position: -80px -80px;
+}
+
+.lang-logo.ruby:hover {
+  background-position: -80px 0;
+}
+
+.lang-logo.java {
+  background-position: -160px -80px;
+}
+
+.lang-logo.java:hover {
+  background-position: -160px 0;
+}
+
+.lang-logo.php {
+  background-position: -240px -80px;
+}
+
+.lang-logo.php:hover {
+  background-position: -240px 0;
+}
+
+.lang-logo.python {
+  background-position: -320px -80px;
+}
+
+.lang-logo.python:hover {
+  background-position: -320px 0;
+}
+
+.lang-logo.clojure {
+  background-position: -400px -80px;
+}
+
+.lang-logo.clojure:hover {
+  background-position: -400px 0;
+}
+
+.lang-logo.scala {
+  background-position: -480px -80px;
+}
+
+.lang-logo.scala:hover {
+  background-position: -480px 0;
+}
+
+.lang-logo.scala-play {
+  background-position: -480px -80px;
+}
+
+.lang-logo.scala-play:hover {
+  background-position: -480px 0;
+}
+
+.lang-logo.scala-and-play {
+  background-position: -480px -80px;
+}
+
+.lang-logo.scala-and-play:hover {
+  background-position: -480px 0;
+}
+
+.lang-logo.go {
+  background-position: -560px -80px;
+}
+
+.lang-logo.go:hover {
+  background-position: -560px 0;
+}
+
+.lang-logo.dotnet {
+  background-position: -640px -80px;
+}
+
+.lang-logo.dotnet:hover {
+  background-position: -640px 0;
+}
+
+.lang-logo.net {
+  background-position: -640px -80px;
+}
+
+.lang-logo.net:hover {
+  background-position: -640px 0;
+}
