@@ -3,20 +3,16 @@ var webAuth = new auth0.WebAuth({
     domain: 'auth.coderic.org',
     audience: `https://coderic.eu.auth0.com/api/v2/`,
     scope: 'openid profile email',
-    redirectUri: 'https://'+window.location.hostname+'/',
+    redirectUri: 'https://coderic.net/',
     responseType: 'token id_token'
 });
 
-logout = () => webAuth.logout({
-    returnTo: 'https://' +window.location.hostname + '/'
-});
-
 $(document).ready(function() {
-  webAuth.checkSession(
+    webAuth.checkSession(
     {
         audience: 'https://coderic.eu.auth0.com/api/v2/',
         scope: 'openid profile email',
-    }, 
+    },
     function(err, result) {
       console.dir(result);
       if (err || !result || !result.accessToken) {
@@ -31,6 +27,9 @@ $(document).ready(function() {
         $(".guest").hide();
         $(".authenticated").show();
       }
-    }
-    );
+    });
   });
+
+logout = () => webAuth.logout({
+      returnTo: 'https://' +window.location.hostname + '/'
+});
